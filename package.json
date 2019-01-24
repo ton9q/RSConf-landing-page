@@ -1,0 +1,41 @@
+{
+  "name": "rsconf-landing-page",
+  "version": "0.0.1",
+  "description": "Code-Jam RSSconf-langin-page",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint -c .eslintrc.js ./src/**/*.js",
+    "fix-lint": "eslint -c .eslintrc.js ./src/**/*.js --fix",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergey496/RSConf-landing-page.git"
+  },
+  "author": "Siarhei Zylevich, Anton Kuchma, Aliaksandr Naumenka, Alexey Kurilo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergey496/RSConf-landing-page/issues"
+  },
+  "homepage": "https://github.com/sergey496/RSConf-landing-page#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.1",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "json-loader": "^0.5.7",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
