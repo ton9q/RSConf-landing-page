@@ -8,7 +8,7 @@ const Menu = () => (
         <Nav className="mr-auto" style={{fontSize: '1.5em'}}>
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">Main Page</Nav.Link>
-            <Nav.Link href="#pricing">Some other page</Nav.Link>
+            <Nav.Link href="#pricing">Great Belorussian Producers</Nav.Link>
         </Nav>
         <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
