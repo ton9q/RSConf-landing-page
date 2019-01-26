@@ -6,9 +6,9 @@ const Menu = () => (
     <Navbar bg="rebeccapurple" variant="dark">
         <img src={logo} alt="RSSchool logo" style={{maxInlineSize: '4em', marginRight: '3em'}} />
         <Nav className="mr-auto" style={{fontSize: '1.5em'}}>
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Main Page</Nav.Link>
-            <Nav.Link href="#pricing">Great Belorussian Producers</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="page-2">Main Page</Nav.Link>
+            <Nav.Link href="person">Great Belorussian Producers</Nav.Link>
         </Nav>
         <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />

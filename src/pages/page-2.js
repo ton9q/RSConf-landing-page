@@ -5,14 +5,15 @@ import { Media } from 'react-bootstrap'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import PersonDescription from '../components/personDescription'
+
+import PersonDescription from '../components/personDescription';
+import PersonListHandler from '../components/personListHandler';
+
 
 const SecondPage = () => (
   <Layout>
     <SEO title="Page two" />
-    <PersonDescription />
-    <hr />
-    <PersonDescription />
+    <PersonListHandler />
     <Link to="/">Go back to the homepage</Link>
   </Layout>
 )

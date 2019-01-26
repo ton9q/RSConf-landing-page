@@ -1,27 +1,22 @@
 import React from 'react'
 import { Media } from 'react-bootstrap'
 
-const personDescription = () => (
-  <div>
+const personDescription = ({title, description, src}) => (
     <Media>
-      <img
-        width={64}
-        height={64}
-        className="mr-3"
-        src="holder.js/64x64"
-        alt="Generic placeholder"
-      />
-      <Media.Body>
-        <h5>Media Heading</h5>
-        <p>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-          scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in
-          vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-          vulputate fringilla. Donec lacinia congue felis in faucibus.
-        </p>
-      </Media.Body>
+        <Media.Body>
+            <h5>{title}</h5>
+            <p>
+            {description}
+            </p>
+        </Media.Body>
+        <img
+            width={64}
+            height={64}
+            className="mr-3"
+            src= {src}
+            alt="Producer picture"
+        />
     </Media>
-  </div>
 )
 
 export default personDescription
