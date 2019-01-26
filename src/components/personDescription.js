@@ -19,4 +19,4 @@ const personDescription = ({title, description, src}) => (
     </Media>
 )
 
-export default personDescription;
+export default personDescription
