@@ -13,14 +13,22 @@ import pic4 from '../images/producers/4/0.jpg'
 import pic5 from '../images/producers/5/0.jpg'
 // import GlobalState from 'globalstate'
 
+import { ProducerState, setState, getState } from './producerState';
+
+const producerState = new ProducerState();
+setState(producerState);
+
 export default class PersonListHandler extends Component {
   state = {
     producers,
     pictures: [pic0, pic1, pic2, pic3, pic4, pic5],
   }
-
+  
   handleClick = (e) => {
-    globalState.setState(e.currentTarget.className)
+    if (e.target.tagName === 'BUTTON') {
+      globalState.setState(e.currentTarget.className)
+    }
+
   }
 
   render() {
