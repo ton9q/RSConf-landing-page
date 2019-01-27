@@ -3,19 +3,13 @@ import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import {
-  Card,
-  Carousel,
-  /* Button, CardGroup, */ Figure,
-} from 'react-bootstrap'
-import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react'
+import Producer from '../components/producer/producer'
+// import GlobalState from 'globalstate'
 
-// import Producer from '../components/producer/producer'
-
-const Person = ({ person, linkImage }) => (
+const Person = () => (
   <Layout>
     <SEO title="Person" />
-    {/* <Producer />> */}
+    <Producer /* person={GlobalState.person} src={'GlobalState.linkImage'} */ />
     <Link to="/">Назад</Link>
   </Layout>
 )

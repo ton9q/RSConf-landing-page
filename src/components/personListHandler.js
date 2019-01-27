@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { CardGroup } from 'react-bootstrap'
+import { CardGroup, Alert } from 'react-bootstrap'
 
 import producers from '../../data/producers-rus.json'
 
@@ -18,7 +18,9 @@ export default class PersonListHandler extends Component {
     pictures: [pic0, pic1, pic2, pic3, pic4, pic5],
   }
 
-  handleClick = () => {}
+  handleClick = (e) => {
+    console.dir(e.key);
+  }
 
   render() {
     const { producers, pictures } = this.state
