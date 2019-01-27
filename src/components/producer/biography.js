@@ -2,25 +2,21 @@ import React, { Component, Fragment } from 'react'
 import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react'
 
 export default class Biography extends Component {
-  // constructor(props) {
-  //   super(props)
+  constructor(props) {
+    super(props)
 
-  //   this.state = {
-  //     data: this.props.biography
-  //   }
-  // }
+    this.state = {
+      data: this.props.biography,
+      lang: this.props.lang
+    }
+  }
 
   render() {
-    // const { data } = this.state.biography
-    const data = [
-      ['дата 1', 'текс 1'],
-      ['дата 2', 'текс 2'],
-      ['дата 3', 'текс 3'],
-    ]
+    const { data, lang } = this.state
 
     return (
       <Fragment>
-        <h2>Биография</h2>
+        {lang === 'rus' ? (<h2>Биография</h2>) : (<h2>Biography</h2>)}
 
         <Timeline lineColor={'#ddd'}>
           {data.map((part, index) => (
