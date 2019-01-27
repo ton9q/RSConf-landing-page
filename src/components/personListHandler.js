@@ -27,6 +27,7 @@ export default class PersonListHandler extends Component {
               linkImage={pictures[index][0]}
               linkButton="/person"
               buttonName="more"
+              size='15'
             />
           </div>
         ))}
