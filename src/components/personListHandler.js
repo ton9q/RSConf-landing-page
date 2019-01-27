@@ -14,6 +14,7 @@ import pic5 from '../images/producers/5/0.jpg'
 // import GlobalState from 'globalstate'
 
 import { ProducerState, setState, getState } from './producerState';
+import { object } from 'prop-types';
 
 const producerState = new ProducerState();
 setState(producerState);
@@ -26,7 +27,7 @@ export default class PersonListHandler extends Component {
   
   handleClick = (e) => {
     if (e.target.tagName === 'BUTTON') {
-      globalState.setState(e.currentTarget.className)
+      localStorage.setItem('producerName', `${e.currentTarget.className}`)
     }
 
   }

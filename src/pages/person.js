@@ -10,7 +10,7 @@ import Producer from '../components/producer/producer'
 const Person = () => (
   <Layout>
     <SEO title="Person" />
-    <Producer /* person={GlobalState.person} src={'GlobalState.linkImage'} */ />
+    <Producer  person={localStorage.getItem('producerName')} /* src={'GlobalState.linkImage'} */ />
     <Link to="/">Назад</Link>
   </Layout>
 )
