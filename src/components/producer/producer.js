@@ -4,7 +4,7 @@ import { Figure } from 'react-bootstrap'
 
 import Biography from './biography'
 import Filmography from './filmography'
-import Photos from './photo/photos'
+import Photos from './photos'
 import Video from './video'
 import Map from './map'
 

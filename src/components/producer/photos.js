@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Carousel } from 'react-bootstrap'
 
-import Photo from './photo'
-
 export default class Photos extends Component {
   constructor(props) {
     super(props)
@@ -25,7 +23,11 @@ export default class Photos extends Component {
         }}
       >
         {links !== undefined &&
-          links.map(link => <Photo linkPhoto={link} altPhoto={alt} />)}
+          links.map((link, index) => (
+            <Carousel.Item>
+              <img className="d-block w-25" src={link} alt={ alt === null ? ('producer photo') : (alt)} />
+            </Carousel.Item>
+          ))}
       </Carousel>
     )
   }
