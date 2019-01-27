@@ -9541,6 +9541,13 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-modal-video@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/react-modal-video/-/react-modal-video-1.2.1.tgz#9e38906681a774d95722a5588685d8e53a465750"
+  integrity sha512-/ZjUUPK+yCSVecgyAcsh/3vIUNZGWtmi5pPE705xhue6h5351LaSQAX+DJqQBgfQskixqAusxpRjDE6+SuwHdQ==
+  dependencies:
+    react-transition-group "^2.2.1"
+
 react-overlays@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-1.1.1.tgz#81f8dddce11f8402cf86ece0f8c9780941495b64"
@@ -9582,7 +9589,7 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
-react-transition-group@^2.5.1:
+react-transition-group@^2.2.1, react-transition-group@^2.5.1:
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.5.3.tgz#26de363cab19e5c88ae5dbae105c706cf953bb92"
   integrity sha512-2DGFck6h99kLNr8pOFk+z4Soq3iISydwOFeeEVPjTN6+Y01CmvbWmnN02VuTWyFdnRtIDPe+wy2q6Ui8snBPZg==
