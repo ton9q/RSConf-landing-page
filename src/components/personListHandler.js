@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { CardGroup, Alert } from 'react-bootstrap'
+import { CardGroup } from 'react-bootstrap'
 
 import producers from '../../data/producers-rus.json'
 
@@ -12,14 +12,24 @@ import pic3 from '../images/producers/3/0.jpg'
 import pic4 from '../images/producers/4/0.jpg'
 import pic5 from '../images/producers/5/0.jpg'
 
+import { ProducerState, setState, getState } from './producerState';
+
+const producerState = new ProducerState();
+setState(producerState);
+
 export default class PersonListHandler extends Component {
   state = {
     producers,
     pictures: [pic0, pic1, pic2, pic3, pic4, pic5],
   }
-
+  
   handleClick = (e) => {
-    console.dir(e.key);
+    if (e.target.tagName === 'BUTTON') {
+      e.preventDefault();
+      setState(e.target.parentNode.previousSibling.textContent)
+    }
+    
+
   }
 
   render() {
