@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
 
 export default class Map extends Component {
-  // constructor(props) {
-  //   super(props)
+  constructor(props) {
+    super(props)
 
-  //   this.state = {
-  //     video: this.props.videoLink,
-  //   }
-  // }
+    this.state = {
+      video: this.props.videoLink,
+    }
+  }
 
   render() {
-    // const { video } = this.state
-    const video = 'https://www.youtube.com/embed/hFgB5E0uL_Y'
+    const { video } = this.state
 
     return (
       <div
