@@ -2,20 +2,28 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Figure } from 'react-bootstrap'
 
+import Biography from './biography'
+import Filmography from './filmography'
+import Photos from './photo/photos'
+import Video from './video'
+import Map from './map'
+
 const Person = ({ person, src }) => (
   <Fragment>
+    <h1>{person}</h1>
+
     <Figure>
-      <Figure.Image
-        width={400}
-        height={500}
-        alt={person}
-        src={src}
-      />
-      <Figure.Caption>
+      <Figure.Image width={400} height={500} alt={person} src={src} />
+      {/* <Figure.Caption>
       {person}
-      </Figure.Caption>
+      </Figure.Caption> */}
     </Figure>
-    {/* here comes the other parts */}
+
+    <Biography />
+    <Filmography />
+    <Photos />
+    <Video />
+    <Map />
   </Fragment>
 )
 
