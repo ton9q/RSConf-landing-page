@@ -6,7 +6,7 @@ import './bootstrap.min.css'
 
 import './layout.css'
 
-import Header from './header'
+import Menu from './menu/index'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -21,7 +21,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Menu siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
             margin: `0 auto`,
