@@ -17,8 +17,6 @@ export default class Photos extends Component {
     return (
       <Carousel
         style={{
-          width: '1000px',
-          height: '400px',
           background: 'grey',
         }}
       >

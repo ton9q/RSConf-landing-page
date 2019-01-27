@@ -7,44 +7,31 @@ import Filmography from './filmography'
 import Photos from './photos'
 import Video from './video'
 import Map from './map'
+import producerState from "../producerState";
 
-import pic from '../../images/producers/0/2.jpg'
-import pic1 from '../../images/producers/0/1.jpg'
+const currentProducer = producerState.producers.find((producer) => producer.person === localStorage.getItem('producerName'));
+const currentProducerIndex = producerState.producers.findIndex((producer) => producer.person === localStorage.getItem('producerName'));
 
-const dataFilmorgaphy = {
-  'Режиссёр мультипликационных фильмов': [
-    '1980 — «Сказка о весёлом клоуне»',
-    '1982 — «Песнь о зубре»',
-  ],
-  Сценарист: [
-    '1980 — «Нестерка»',
-    '1982 — «Песнь о зубре»',
-    '1985 — «Ковбойские игры»',
-  ],
-}
-
-const dataBiography = [
-  ['дата 1', 'текс 1'],
-  ['дата 2', 'текс 2'],
-  ['дата 3', 'текс 3'],
-]
-
+const dataFilmorgaphy = currentProducer.filmography;
+const dataBiography = currentProducer.biography;
 const lang = 'eng'
-const mapCoordinates =
-  'https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d75241.51082857055!2d27.5830197!3d53.8909211!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sby!4v1548525658390'
+const mapCoordinates = currentProducer.markOnMap;
+const photo = producerState.pictures[currentProducerIndex][0];
+const allPhotos = producerState.pictures[currentProducerIndex];
+const video = currentProducer.videoLinks;
 
-const Person = ({ person, src }) => (
+const Person = ({ person }) => (
   <Fragment>
     <h1>{person}</h1>
 
     <Figure>
-      <Figure.Image width={400} height={500} alt={person} src={src} />
+      <Figure.Image width={400} height={500} alt={person} src={photo} />
     </Figure>
 
     <Biography biography={dataBiography} lang={lang} />
     <Filmography filmography={dataFilmorgaphy} lang={lang} />
-    <Photos photoLinks={[pic, pic1, pic1, pic1]} person="anton kuchma" />
-    <Video videoLink="https://www.youtube.com/embed/hFgB5E0uL_Y" />
+    <Photos photoLinks={allPhotos} person={person} />
+    <Video videoLink={video} />
     <Map mapCoordinates={mapCoordinates} />
   </Fragment>
 )
