@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Button, FormControl, Form } from 'react-bootstrap'
 
 export default class PersonListHandler extends Component {
@@ -26,7 +26,7 @@ export default class PersonListHandler extends Component {
 
   render() {
     return (
-      <Form inline>
+      <Fragment>
         <FormControl
           type="text"
           placeholder="Search"
@@ -39,7 +39,7 @@ export default class PersonListHandler extends Component {
         >
           Search
         </Button>
-      </Form>
+      </Fragment>
     )
   }
 }
