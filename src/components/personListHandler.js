@@ -11,6 +11,7 @@ import pic2 from '../images/producers/2/0.jpg'
 import pic3 from '../images/producers/3/0.jpg'
 import pic4 from '../images/producers/4/0.jpg'
 import pic5 from '../images/producers/5/0.jpg'
+// import GlobalState from 'globalstate'
 
 import { ProducerState, setState, getState } from './producerState';
 
@@ -25,10 +26,8 @@ export default class PersonListHandler extends Component {
   
   handleClick = (e) => {
     if (e.target.tagName === 'BUTTON') {
-      e.preventDefault();
-      setState(e.target.parentNode.previousSibling.textContent)
+      globalState.setState(e.currentTarget.className)
     }
-    
 
   }
 
@@ -38,7 +37,7 @@ export default class PersonListHandler extends Component {
     return (
       <CardGroup>
         {producers.map((person, index) => (
-          <div key={`${index} - ${person}`} onClick={this.handleClick}>
+          <div className={person.person} key={`${index} - ${person.person}`} onClick={this.handleClick}>
             <Person
               person={person.person}
               linkImage={pictures[index]}
