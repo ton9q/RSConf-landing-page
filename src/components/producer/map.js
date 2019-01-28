@@ -28,7 +28,7 @@ export default class Map extends Component {
             frameborder: '0',
             border: '0',
           }}
-          allowfullscreen
+          allowfullscreen={true}
         />
       </div>
     )
