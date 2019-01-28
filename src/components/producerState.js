@@ -1,41 +1,48 @@
-import pic0 from '../images/producers/0/0.jpg'
-import pic1 from '../images/producers/0/1.jpg'
-import pic2 from '../images/producers/0/2.jpg'
-import pic3 from '../images/producers/1/0.jpg'
-import pic4 from '../images/producers/1/1.jpg'
-import pic5 from '../images/producers/1/2.jpg'
-import pic6 from '../images/producers/1/3.jpg'
-import pic7 from '../images/producers/1/4.jpg'
-import pic8 from '../images/producers/2/0.jpg'
-import pic9 from '../images/producers/2/1.jpg'
-import pic10 from '../images/producers/3/0.jpg'
-import pic11 from '../images/producers/3/1.jpg'
-import pic12 from '../images/producers/3/2.jpg'
-import pic13 from '../images/producers/3/3.jpg'
-import pic14 from '../images/producers/3/4.jpg'
-import pic15 from '../images/producers/4/0.jpg'
-import pic16 from '../images/producers/4/1.jpg'
-import pic17 from '../images/producers/4/2.jpg'
-import pic18 from '../images/producers/4/3.jpg'
-import pic19 from '../images/producers/5/0.jpg'
-import pic20 from '../images/producers/5/1.jpg'
-import pic21 from '../images/producers/5/2.jpg'
-import pic22 from '../images/producers/5/3.jpg'
-import pic23 from '../images/producers/5/4.jpg'
-import pic24 from '../images/producers/5/5.jpg'
-import pic25 from '../images/producers/5/6.jpg'
+import producer0_0 from '../images/producers/0/0.jpg'
+import producer0_1 from '../images/producers/0/1.jpg'
+import producer0_2 from '../images/producers/0/2.jpg'
+
+import producer1_0 from '../images/producers/1/0.jpg'
+import producer1_1 from '../images/producers/1/1.jpg'
+import producer1_2 from '../images/producers/1/2.jpg'
+import producer1_3 from '../images/producers/1/3.jpg'
+import producer1_4 from '../images/producers/1/4.jpg'
+
+import producer2_0 from '../images/producers/2/0.jpg'
+import producer2_1 from '../images/producers/2/1.jpg'
+
+import producer3_0 from '../images/producers/3/0.jpg'
+import producer3_1 from '../images/producers/3/1.jpg'
+import producer3_2 from '../images/producers/3/2.jpg'
+import producer3_3 from '../images/producers/3/3.jpg'
+import producer3_4 from '../images/producers/3/4.jpg'
+
+import producer4_0 from '../images/producers/4/0.jpg'
+import producer4_1 from '../images/producers/4/1.jpg'
+import producer4_2 from '../images/producers/4/2.jpg'
+import producer4_3 from '../images/producers/4/3.jpg'
+
+import producer5_0 from '../images/producers/5/0.jpg'
+import producer5_1 from '../images/producers/5/1.jpg'
+import producer5_2 from '../images/producers/5/2.jpg'
+import producer5_3 from '../images/producers/5/3.jpg'
+import producer5_4 from '../images/producers/5/4.jpg'
+import producer5_5 from '../images/producers/5/5.jpg'
+import producer5_6 from '../images/producers/5/6.jpg'
 
 import producers from '../../data/producers-rus.json'
 
 const pictures = [
-  [pic0, pic1, pic2],
-  [pic3, pic4, pic5, pic6, pic7],
-  [pic8, pic9],
-  [pic10, pic11, pic12, pic13, pic14],
-  [pic15, pic16, pic17, pic18],
-  [pic19, pic20, pic21, pic22, pic23, pic24, pic25]
+  [producer0_0, producer0_1, producer0_2],
+  [producer1_0, producer1_1, producer1_2, producer1_3, producer1_4],
+  [producer2_0, producer2_1],
+  [producer3_0, producer3_1, producer3_2, producer3_3, producer3_4],
+  [producer4_0, producer4_1, producer4_2, producer4_3],
+  [producer5_0, producer5_1, producer5_2, producer5_3, producer5_4, producer5_5, producer5_6],
 ]
+
 export default {
   producers,
-  pictures
+  pictures,
+  lang: 'rus'
 }
