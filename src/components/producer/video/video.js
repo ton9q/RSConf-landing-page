@@ -26,13 +26,20 @@ export default class Video extends Component {
   }
 
   render() {
-    // const videoId = this.state.video.split('=')[1]
-    // const video = this.state.video
+    const video = this.state.video
+    const videoId = video.slice(video.lastIndexOf('/') + 1, video.length)
 
-    const videoId = 'hFgB5E0uL_Y'
-    const video = 'https://www.youtube.com/embed/hFgB5E0uL_Y'
-
-    return (
+    console.log(video, videoId)
+    return video === '' ? (
+      <h2
+        style={{
+          textAlign: 'center',
+          margin: '150px auto',
+        }}
+      >
+        Sorry, but we dont have a video
+      </h2>
+    ) : (
       <Fragment>
         <div
           style={{
