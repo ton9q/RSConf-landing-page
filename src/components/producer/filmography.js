@@ -1,23 +1,25 @@
 import React, { Component, Fragment } from 'react';
 import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
 import PropTypes from 'prop-types';
+import { Trans } from 'react-i18next';
 
 export default class Filmography extends Component {
-  constructor({ filmography, lang }) {
-    super(filmography, lang);
+  constructor({ filmography }) {
+    super(filmography);
 
     this.state = {
       data: filmography,
-      lang,
     };
   }
 
   render() {
-    const { data, lang } = this.state;
+    const { data } = this.state;
 
     return (
       <Fragment>
-        {lang === 'rus' ? <h2>Фильмография</h2> : <h2>Filmography</h2>}
+        <h2>
+          <Trans>Filmography</Trans>
+        </h2>
 
         <Timeline>
           {Object.keys(data).map(key => (
@@ -35,10 +37,8 @@ export default class Filmography extends Component {
 
 Filmography.defaultProps = {
   filmography: '',
-  lang: '',
 };
 
 Filmography.propTypes = {
   filmography: PropTypes.string,
-  lang: PropTypes.string,
 };

@@ -1,0 +1,44 @@
+{
+  "en": {
+    "translation": {
+      "Home": "Home",
+      "OurTeam": "Our Team",
+      "BuiltWith": "Built with",
+      "Gatsby": "Gatsby",
+      "ProducerOfTheDay": "Producer Of The Day",
+      "NotFound": "NOT FOUND",
+      "messageError": "You just hit a route that doesn't exist... the sadness.",
+      "Back": "Back",
+      "OurTeamHeader": "Our Team «Group 23»",
+      "More": "More",
+      "gitHub": "gitHub",
+      "Search": "Search",
+      "Rus": "Rus",
+      "Eng": "Eng",
+      "Biography": "Biography",
+      "Filmography": "Filmography",
+      "HaventVideoMessage": "Sorry, but we dont have a video"
+    }
+  },
+  "ru": {
+    "translation": {
+      "Home": "Главная",
+      "OurTeam": "Наша команда",
+      "BuiltWith": "Сделано с помощью",
+      "Gatsby": "Gatsby",
+      "ProducerOfTheDay": "Продюсер дня",
+      "NotFound": "НЕ НАЙДЕНО",
+      "messageError": "Вы попали на маршрут, которого не существует... печально.",
+      "Back": "Назад",
+      "OurTeamHeader": "Наша команда «Группа 23»",
+      "More": "Больше",
+      "gitHub": "gitHub",
+      "Search": "Поиск",
+      "Rus": "Рус",
+      "Eng": "Англ",
+      "Biography": "Биография",
+      "Filmography": "Фильмография",
+      "HaventVideoMessage": "Извините, видео для этого автора не имеется"
+    }
+  }
+}

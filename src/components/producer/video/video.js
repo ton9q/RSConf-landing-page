@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { Trans } from 'react-i18next';
 
 import ModalVideo from 'react-modal-video';
 import './modal-video.min.css';
@@ -31,7 +32,6 @@ export default class Video extends Component {
     const { video } = this.state;
     const videoId = video.slice(video.lastIndexOf('/') + 1, video.length);
 
-    console.log(video, videoId);
     return video === '' ? (
       <h2
         style={{
@@ -39,7 +39,7 @@ export default class Video extends Component {
           margin: '150px auto',
         }}
       >
-        Sorry, but we dont have a video
+        <Trans>HaventVideoMessage</Trans>
       </h2>
     ) : (
       <Fragment>

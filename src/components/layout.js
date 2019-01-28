@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
+import { Trans } from 'react-i18next';
 
 import './bootstrap.min.css';
 
@@ -20,7 +21,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <div>
         <Menu siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
@@ -35,12 +36,13 @@ const Layout = ({ children }) => (
             ©
             {' '}
             {new Date().getFullYear()}
-            , Built with
             {' '}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
+            <Trans>BuiltWith</Trans>
+            {' '}
+            <a href="https://www.gatsbyjs.org"><Trans>Gatsby</Trans></a>
           </footer>
         </div>
-      </>
+      </div>
     )}
   />
 );

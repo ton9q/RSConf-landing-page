@@ -53,5 +53,5 @@ const pictures = [
 export default {
   producers,
   pictures,
-  lang: 'rus',
+  lang: 'ru',
 };
