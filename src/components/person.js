@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { Trans } from 'react-i18next';
 
 const Person = ({
   nickname,
@@ -28,7 +29,7 @@ const Person = ({
 
 Person.defaultProps = {
   nickname: '',
-  buttonName: 'gitHub',
+  buttonName: <Trans>gitHub</Trans>,
   size: '12',
   person: '',
   linkImage: '',

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { Trans } from 'react-i18next';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -9,7 +10,7 @@ const Person = () => (
   <Layout>
     <SEO title="Person" />
     <Producer person={localStorage.getItem('producerName')} />
-    <Link to="/">Назад</Link>
+    <Link to="/"><Trans>Back</Trans></Link>
   </Layout>
 );
 

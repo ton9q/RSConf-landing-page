@@ -1,5 +1,6 @@
 import React from 'react';
 import { CardGroup } from 'react-bootstrap';
+import { Trans } from 'react-i18next';
 
 import Layout from '../components/layout';
 import Person from '../components/person';
@@ -8,7 +9,7 @@ import team from '../../data/team.json';
 
 const Team = () => (
   <Layout>
-    <h1>&ldquo;Group 23&rdquo; Team</h1>
+    <h1><Trans>OurTeamHeader</Trans></h1>
 
     <CardGroup>
       {team.map(teammate => (

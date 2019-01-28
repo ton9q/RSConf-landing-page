@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { Trans } from 'react-i18next';
 
-import producerState from './producerState';
+import producerState from '../utils/producerState';
 
 import Person from './person';
 
@@ -14,7 +15,7 @@ export default class PersonOfTheDay extends Component {
   }
 
   render() {
-    const { producers, pictures, lang } = this.state;
+    const { producers, pictures } = this.state;
     const index = Math.floor(Math.random() * producers.length);
 
     const styleHeader = {
@@ -33,11 +34,9 @@ export default class PersonOfTheDay extends Component {
 
     return (
       <div style={styleFragment}>
-        {lang === 'rus' ? (
-          <h2 style={styleHeader}>Продюсер дня</h2>
-        ) : (
-          <h2 style={styleHeader}>Producer of the day</h2>
-        )}
+        <h2 style={styleHeader}>
+          <Trans>ProducerOfTheDay</Trans>
+        </h2>
         {/* eslint-disable-next-line */}
         <div
           className={producers[index].person}
@@ -48,7 +47,7 @@ export default class PersonOfTheDay extends Component {
             person={producers[index].person}
             linkImage={pictures[index][0]}
             linkButton="/person"
-            buttonName="more"
+            buttonName={<Trans>More</Trans>}
             size="15"
           />
         </div>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { CardGroup } from 'react-bootstrap';
-import producerState from './producerState';
+import { Trans } from 'react-i18next';
+
+import producerState from '../utils/producerState';
 
 import Person from './person';
 
@@ -31,7 +33,7 @@ export default class PersonListHandler extends Component {
               person={person.person}
               linkImage={pictures[index][0]}
               linkButton="/person"
-              buttonName="more"
+              buttonName={<Trans>More</Trans>}
               size="15"
             />
           </div>

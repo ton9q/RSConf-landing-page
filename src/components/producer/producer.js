@@ -7,7 +7,8 @@ import Filmography from './filmography';
 import Photos from './photos';
 import Video from './video/video';
 import Map from './map';
-import producerState from '../producerState';
+
+import producerState from '../../utils/producerState';
 
 if (!localStorage.producerName) localStorage.setItem('producerName', '');
 
@@ -20,7 +21,6 @@ const currentProducerIndex = producerState.producers.findIndex(
 
 const dataFilmorgaphy = currentProducer.filmography;
 const dataBiography = currentProducer.biography;
-const lang = 'eng';
 const mapCoordinates = currentProducer.markOnMap;
 const photo = producerState.pictures[currentProducerIndex][0];
 const allPhotos = producerState.pictures[currentProducerIndex];
@@ -34,8 +34,8 @@ const Person = ({ person }) => (
       <Figure.Image width={400} height={500} alt={person} src={photo} />
     </Figure>
 
-    <Biography biography={dataBiography} lang={lang} />
-    <Filmography filmography={dataFilmorgaphy} lang={lang} />
+    <Biography biography={dataBiography} />
+    <Filmography filmography={dataFilmorgaphy} />
     <Photos photoLinks={allPhotos} person={person} />
     <Video videoLink={video} />
     <Map mapCoordinates={mapCoordinates} />
