@@ -39,19 +39,18 @@ const pictures = [
   [producer2_0, producer2_1],
   [producer3_0, producer3_1, producer3_2, producer3_3, producer3_4],
   [producer4_0, producer4_1, producer4_2, producer4_3],
-  [
-    producer5_0,
-    producer5_1,
-    producer5_2,
-    producer5_3,
-    producer5_4,
-    producer5_5,
-    producer5_6,
-  ],
+  [producer5_0, producer5_1, producer5_2, producer5_3, producer5_4, producer5_5, producer5_6],
 ];
+
+// const producerOfTheDay = Math.floor(Math.random() * producers.length);
+
+const dateNow = new Date();
+let producerOfTheDay = Math.floor(Math.random() * (dateNow.getDay() - 2));
+if (producerOfTheDay < 0) producerOfTheDay = 0;
 
 export default {
   producers,
+  producerOfTheDay,
   pictures,
   lang: 'ru',
 };
