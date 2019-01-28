@@ -15,8 +15,8 @@ export default class PersonOfTheDay extends Component {
   }
 
   render() {
-    const { producers, pictures } = this.state;
-    const index = Math.floor(Math.random() * producers.length);
+    const { producers, pictures, producerOfTheDay } = this.state;
+    const index = producerOfTheDay;
 
     const styleHeader = {
       textAlign: 'center',
