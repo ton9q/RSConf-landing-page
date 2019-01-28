@@ -39,6 +39,7 @@ const Person = ({ person }) => (
 Person.defaultProps = {
   person: 'Albert Einstein',
   src: 'https://duckduckgo.com/i/45956a7f.jpg',
+  video: "https://www.youtube.com/embed/hFgB5E0uL_Y"
 }
 
 Person.propTypes = {

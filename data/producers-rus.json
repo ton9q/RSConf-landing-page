@@ -44,7 +44,7 @@
     },
     "videoLinks": "",
     "photoLinks": ["0.jpg", "1.jpg", "2.jpg"],
-    "markOnMap": "Слуцк"
+    "markOnMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19199.079122315186!2d27.53723001995456!3d53.02243221109434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46d9ca0d43f3af59%3A0xe113fd3a81c6eae9!2z0KHQu9GD0YbQug!5e0!3m2!1sru!2sby!4v1548632925323"
   },
 
   {
@@ -100,7 +100,7 @@
     },
     "videoLinks": "https://www.youtube.com/watch?v=UvYXZHw1XY4",
     "photoLinks": ["0.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg"],
-    "markOnMap": "Рогачёв"
+    "markOnMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54220.94543932464!2d30.008792438140386!3d53.08774696588545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46d1347fde54485d%3A0xf9b7b823d8037ac4!2z0KDQvtCz0LDRh9GR0LI!5e0!3m2!1sru!2sby!4v1548633353143"
   },
 
   {
@@ -146,7 +146,7 @@
     },
     "videoLinks": "https://www.youtube.com/watch?v=f-gLZQTjQrk",
     "photoLinks": ["0.jpg", "1.jpg"],
-    "markOnMap": "Екатеринослав"
+    "markOnMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d169315.9253236995!2d34.89055631779069!3d48.464945651857306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe303fd08468f%3A0xa1cf3d5f2c11aba!2z0JTQvdC40L_RgNC-LCDQlNC90LXQv9GA0L7Qv9C10YLRgNC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwg0KPQutGA0LDQuNC90LAsIDQ5MDAw!5e0!3m2!1sru!2sby!4v1548633425402"
   },
 
   {
@@ -183,7 +183,7 @@
     },
     "videoLinks": "https://www.youtube.com/watch?v=hOKwpTxllgc",
     "photoLinks": ["0.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg"],
-    "markOnMap": "деревня Федюки"
+    "markOnMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13561.5378158878!2d26.157639384994262!3d53.06773713597695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46d8c36455cf6d71%3A0xc282e33ad6af2989!2z0KTQtdC00Y7QutC4!5e0!3m2!1sru!2sby!4v1548633697206"
   },
 
   {
@@ -233,7 +233,7 @@
     },
     "videoLinks": "https://www.youtube.com/watch?v=n6l17pIZdTg",
     "photoLinks": ["0.jpg", "1.jpg", "2.jpg", "3.jpg"],
-    "markOnMap": "Полоцк"
+    "markOnMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d144604.3253564224!2d28.64230716448156!3d55.50723803123557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c48e045ec357b3%3A0x9b6f7ca39a88cc2b!2z0J_QvtC70L7RhtC6!5e0!3m2!1sru!2sby!4v1548633745941"
   },
 
   {
@@ -274,6 +274,6 @@
     },
     "videoLinks": "https://www.youtube.com/watch?v=nelH-PWiZxs",
     "photoLinks": ["0.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"],
-    "markOnMap": "Могилёв"
+    "markOnMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d213018.39002041987!2d30.282103692108024!3d53.85099279083079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46d0521c52844571%3A0xcf85d14239bb73b6!2z0JzQvtCz0LjQu9GR0LI!5e0!3m2!1sru!2sby!4v1548633793359"
   }
 ]
