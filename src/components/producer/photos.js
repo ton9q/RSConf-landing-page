@@ -1,18 +1,19 @@
-import React, { Component } from 'react'
-import { Carousel } from 'react-bootstrap'
+import React, { Component } from 'react';
+import { Carousel } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 export default class Photos extends Component {
-  constructor(props) {
-    super(props)
+  constructor({ photoLinks, person }) {
+    super(photoLinks, person);
 
     this.state = {
-      links: this.props.photoLinks,
-      alt: this.props.person,
-    }
+      links: photoLinks,
+      alt: person,
+    };
   }
 
   render() {
-    const { links, alt } = this.state
+    const { links, alt } = this.state;
 
     return (
       <Carousel
@@ -20,13 +21,27 @@ export default class Photos extends Component {
           background: 'grey',
         }}
       >
-        {links !== undefined &&
-          links.map((link, index) => (
+        {links !== undefined
+          && links.map(link => (
             <Carousel.Item>
-              <img className="d-block w-25" src={link} alt={ alt === null ? ('producer photo') : (alt)} />
+              <img
+                className="d-block w-25"
+                src={link}
+                alt={alt === null ? 'producer photo' : alt}
+              />
             </Carousel.Item>
           ))}
       </Carousel>
-    )
+    );
   }
 }
+
+Photos.defaultProps = {
+  photoLinks: '',
+  person: '',
+};
+
+Photos.propTypes = {
+  photoLinks: PropTypes.string,
+  person: PropTypes.string,
+};

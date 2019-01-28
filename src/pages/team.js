@@ -1,12 +1,12 @@
-import React from 'react'
-import { CardGroup } from 'react-bootstrap'
+import React from 'react';
+import { CardGroup } from 'react-bootstrap';
 
-import Layout from '../components/layout'
-import Person from '../components/person'
+import Layout from '../components/layout';
+import Person from '../components/person';
 
 const Team = () => (
   <Layout>
-    <h1>"Group 23" Team</h1>
+    <h1>&ldquo;Group 23&rdquo; Team</h1>
 
     <CardGroup>
       <Person
@@ -35,6 +35,6 @@ const Team = () => (
       />
     </CardGroup>
   </Layout>
-)
+);
 
-export default Team
+export default Team;

@@ -1,16 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Map extends Component {
-  constructor(props) {
-    super(props)
+  constructor({ mapCoordinates }) {
+    super(mapCoordinates);
 
     this.state = {
-      coordinates: this.props.mapCoordinates,
-    }
+      coordinates: mapCoordinates,
+    };
   }
 
   render() {
-    const { coordinates } = this.state
+    const { coordinates } = this.state;
 
     return (
       <div
@@ -28,9 +29,17 @@ export default class Map extends Component {
             frameborder: '0',
             border: '0',
           }}
-          allowfullscreen={true}
+          allowFullScreen
         />
       </div>
-    )
+    );
   }
 }
+
+Map.defaultProps = {
+  mapCoordinates: '',
+};
+
+Map.propTypes = {
+  mapCoordinates: PropTypes.string,
+};

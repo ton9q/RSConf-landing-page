@@ -1,18 +1,19 @@
-import React, { Component, Fragment } from 'react'
-import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react'
+import React, { Component, Fragment } from 'react';
+import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
+import PropTypes from 'prop-types';
 
 export default class Filmography extends Component {
-  constructor(props) {
-    super(props)
+  constructor({ filmography, lang }) {
+    super(filmography, lang);
 
     this.state = {
-      data: this.props.filmography,
-      lang: this.props.lang,
-    }
+      data: filmography,
+      lang,
+    };
   }
 
   render() {
-    const { data, lang } = this.state
+    const { data, lang } = this.state;
 
     return (
       <Fragment>
@@ -28,6 +29,16 @@ export default class Filmography extends Component {
           ))}
         </Timeline>
       </Fragment>
-    )
+    );
   }
 }
+
+Filmography.defaultProps = {
+  filmography: '',
+  lang: '',
+};
+
+Filmography.propTypes = {
+  filmography: PropTypes.string,
+  lang: PropTypes.string,
+};
