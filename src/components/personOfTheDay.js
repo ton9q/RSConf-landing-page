@@ -1,27 +1,27 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react';
 
-import producerState from './producerState'
+import producerState from './producerState';
 
-import Person from '../components/person'
+import Person from './person';
 
 export default class PersonOfTheDay extends Component {
   state = producerState
 
-  handleClick = e => {
+  handleClick = (e) => {
     if (e.target.tagName === 'BUTTON') {
-      localStorage.setItem('producerName', `${e.currentTarget.className}`)
+      localStorage.setItem('producerName', `${e.currentTarget.className}`);
     }
   }
 
   render() {
-    const { producers, pictures, lang } = this.state
-    const index = Math.floor(Math.random() * producers.length)
+    const { producers, pictures, lang } = this.state;
+    const index = Math.floor(Math.random() * producers.length);
 
     const styleHeader = {
       textAlign: 'center',
       paddingTop: '15px',
       color: 'rgb(92, 0, 153)',
-    }
+    };
     const styleFragment = {
       border: '2px solid rgb(92, 0, 153)',
       borderRadius: '5%',
@@ -29,7 +29,7 @@ export default class PersonOfTheDay extends Component {
       flexDirection: 'column',
       alignItems: 'center',
       backgroundColor: 'rgba(214, 153, 255, 0.2)',
-    }
+    };
 
     return (
       <div style={styleFragment}>
@@ -38,9 +38,10 @@ export default class PersonOfTheDay extends Component {
         ) : (
           <h2 style={styleHeader}>Producer of the day</h2>
         )}
+        {/* eslint-disable-next-line */}
         <div
           className={producers[index].person}
-          key={`${index} - ${producers[index].person}`}
+          key={`${producers[index].person}`}
           onClick={this.handleClick}
         >
           <Person
@@ -52,6 +53,6 @@ export default class PersonOfTheDay extends Component {
           />
         </div>
       </div>
-    )
+    );
   }
 }
