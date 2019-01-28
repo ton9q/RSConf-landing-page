@@ -46,7 +46,7 @@
   "by": {
     "translation": {
       "Home": "Галоўная",
-      "OurTeam": "Наша команда",
+      "OurTeam": "Наша каманда",
       "BuiltWith": "Зроблена з дапамогай",
       "Gatsby": "Gatsby",
       "ProducerOfTheDay": "Прадзюсар дня",
@@ -62,7 +62,7 @@
       "Blr": "Бел",	
       "Biography": "Біяграфія",
       "Filmography": "Фільмаграфія",
-      "HaventVideoMessage": "Выбачайце, відэа для гэтага автора не маецца"
+      "HaventVideoMessage": "Выбачайце, відэа для гэтага аўтара не маецца"
     }
   }
 }
