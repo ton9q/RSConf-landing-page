@@ -1,4 +1,4 @@
-{
+﻿{
   "en": {
     "translation": {
       "Home": "Home",
@@ -15,6 +15,7 @@
       "Search": "Search",
       "Rus": "Rus",
       "Eng": "Eng",
+      "Blr": "Blr",	
       "Biography": "Biography",
       "Filmography": "Filmography",
       "HaventVideoMessage": "Sorry, but we dont have a video"
@@ -36,9 +37,32 @@
       "Search": "Поиск",
       "Rus": "Рус",
       "Eng": "Англ",
+      "Blr": "Бел",	
       "Biography": "Биография",
       "Filmography": "Фильмография",
       "HaventVideoMessage": "Извините, видео для этого автора не имеется"
+    }
+  },
+  "by": {
+    "translation": {
+      "Home": "Галоўная",
+      "OurTeam": "Наша команда",
+      "BuiltWith": "Зроблена з дапамогай",
+      "Gatsby": "Gatsby",
+      "ProducerOfTheDay": "Прадзюсар дня",
+      "NotFound": "НЕ ЗНОЙДЗЕНА",
+      "messageError": "Вы трапілі на маршрут, якога не існуе ... сумна.",
+      "Back": "Назад",
+      "OurTeamHeader": "Наша команда «Група 23»",
+      "More": "Больш",
+      "gitHub": "gitHub",
+      "Search": "Пошук",
+      "Rus": "Рус",
+      "Eng": "Англ",
+      "Blr": "Бел",	
+      "Biography": "Біяграфія",
+      "Filmography": "Фільмаграфія",
+      "HaventVideoMessage": "Выбачайце, відэа для гэтага автора не маецца"
     }
   }
 }
