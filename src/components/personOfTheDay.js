@@ -6,7 +6,16 @@ import producerState from '../utils/producerState';
 import Person from './person';
 
 export default class PersonOfTheDay extends Component {
-  state = producerState
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
+  }
 
   handleClick = (e) => {
     if (e.target.tagName === 'BUTTON') {
@@ -14,9 +23,20 @@ export default class PersonOfTheDay extends Component {
     }
   }
 
+  handleToggle(e) {
+    if (e.target.tagName !== 'BUTTON') {
+      // eslint-disable-next-line
+      const openIsNow = this.state.isOpen
+      this.setState({
+        isOpen: !openIsNow,
+      });
+    }
+  }
+
   render() {
-    const { producers, pictures, producerOfTheDay } = this.state;
+    const { producers, pictures, producerOfTheDay } = producerState;
     const index = producerOfTheDay;
+    const { isOpen } = this.state;
 
     const styleHeader = {
       textAlign: 'center',
@@ -25,19 +45,19 @@ export default class PersonOfTheDay extends Component {
     };
     const styleFragment = {
       border: '2px solid rgb(92, 0, 153)',
-      borderRadius: '5%',
+      borderRadius: '20px',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       backgroundColor: 'rgba(214, 153, 255, 0.2)',
+      transition: 'all 2s ease-out',
+      cursor: 'pointer',
     };
 
-    return (
-      <div style={styleFragment}>
-        <h2 style={styleHeader}>
-          <Trans>ProducerOfTheDay</Trans>
-        </h2>
-        {/* eslint-disable-next-line */}
+    let result;
+    if (isOpen) {
+      result = (
+        // eslint-disable-next-line
         <div
           className={producers[index].person}
           key={`${producers[index].person}`}
@@ -51,6 +71,17 @@ export default class PersonOfTheDay extends Component {
             size="15"
           />
         </div>
+      );
+    } else {
+      result = null;
+    }
+    return (
+      // eslint-disable-next-line
+      <div style={styleFragment} onClick={e => this.handleToggle(e)}>
+        <h2 style={styleHeader}>
+          <Trans>ProducerOfTheDay</Trans>
+        </h2>
+        {result}
       </div>
     );
   }
