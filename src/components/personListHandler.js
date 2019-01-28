@@ -56,11 +56,14 @@ export default class PersonListHandler extends Component {
     const { resultSearch } = this.state;
 
     const producers = PersonListHandler.getFiltered(producerState.producers, resultSearch);
+    const persons = [];
+
+    producerState.producers.map(producer => persons.push(producer.person));
 
     return (
       <CardGroup>
         <Search onChange={this.inputTextHandler} />
-        {producers.map((person, index) => (
+        {producers.map(person => (
           // eslint-disable-next-line jsx-a11y/click-events-have-key-events
           <div
             role="button"
@@ -71,7 +74,7 @@ export default class PersonListHandler extends Component {
           >
             <Person
               person={person.person}
-              linkImage={producerState.pictures[index][0]}
+              linkImage={producerState.pictures[persons.indexOf(person.person)][0]}
               linkButton="/person"
               buttonName={<Trans>More</Trans>}
               size="15"
