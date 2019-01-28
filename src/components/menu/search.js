@@ -1,27 +1,28 @@
-import React, { Component, Fragment } from 'react'
-import { Button, FormControl, Form } from 'react-bootstrap'
+/* eslint-disable */
+import React, { Component, Fragment } from 'react';
+import { Button, FormControl } from 'react-bootstrap';
 
 export default class PersonListHandler extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       value: '',
-    }
+    };
 
-    this.handleChange = this.handleChange.bind(this)
-    this.searchProducer = this.searchProducer.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this.searchProducer = this.searchProducer.bind(this);
   }
 
   handleChange(e) {
     this.setState({
       value: e.target.value,
-    })
+    });
   }
 
   searchProducer(value) {
     // change main page on the meaning 'value'
-    console.log('value for search: ' + value)
+    console.log(`value for search: ${value}`);
   }
 
   render() {
@@ -40,6 +41,6 @@ export default class PersonListHandler extends Component {
           Search
         </Button>
       </Fragment>
-    )
+    );
   }
 }

@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react';
 import {
   ButtonToolbar,
   ToggleButtonGroup,
   ToggleButton,
-  Form,
-} from 'react-bootstrap'
+} from 'react-bootstrap';
 
 const Toggle = () => (
   <ButtonToolbar>
@@ -13,6 +12,6 @@ const Toggle = () => (
       <ToggleButton value={2}>Eng</ToggleButton>
     </ToggleButtonGroup>
   </ButtonToolbar>
-)
+);
 
-export default Toggle
+export default Toggle;

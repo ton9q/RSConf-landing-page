@@ -1,6 +1,6 @@
-import React from 'react'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import React from 'react';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 import PersonListHandler from '../components/personListHandler'
 import PersonOfTheDay from '../components/personOfTheDay'
@@ -11,6 +11,6 @@ const IndexPage = () => (
     <PersonOfTheDay />
     <PersonListHandler />
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;

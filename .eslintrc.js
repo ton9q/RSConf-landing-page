@@ -3,12 +3,16 @@ module.exports = {
     "env": {
         "browser": true,
         "node": true,
-        "jest": true,
-        "jsx": true
+        "jest": true
     },
     "plugins": [
         "react",
-        "jsx-ally",
+        "jsx-a11y",
         "import"
-    ]
+    ],
+    "parser": "babel-eslint",
+    "rules": {
+        "strict": 0,
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    },
 };
