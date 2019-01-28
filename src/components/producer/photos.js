@@ -14,18 +14,27 @@ export default class Photos extends Component {
 
   render() {
     const { links, alt } = this.state;
+    const size = 400;
 
     return (
       <Carousel
         style={{
           background: 'grey',
+          maxWidth: `${size}px`,
+          margin: 'auto',
         }}
       >
         {links !== undefined
           && links.map(link => (
-            <Carousel.Item>
+            <Carousel.Item
+              style={{
+                maxHeight: `${size}px`,
+              }}
+            >
               <img
-                className="d-block w-25"
+                width={size}
+                height={size}
+                className="d-block"
                 src={link}
                 alt={alt === null ? 'producer photo' : alt}
               />
