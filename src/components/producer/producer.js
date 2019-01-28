@@ -1,20 +1,26 @@
-import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
-import { Figure } from 'react-bootstrap'
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import { Figure } from 'react-bootstrap';
 
-import Biography from './biography'
-import Filmography from './filmography'
-import Photos from './photos'
-import Video from './video/video'
-import Map from './map'
-import producerState from "../producerState";
+import Biography from './biography';
+import Filmography from './filmography';
+import Photos from './photos';
+import Video from './video/video';
+import Map from './map';
+import producerState from '../producerState';
 
-const currentProducer = producerState.producers.find((producer) => producer.person === localStorage.getItem('producerName'));
-const currentProducerIndex = producerState.producers.findIndex((producer) => producer.person === localStorage.getItem('producerName'));
+if (!localStorage.producerName) localStorage.setItem('producerName', '');
+
+const currentProducer = producerState.producers.find(
+  producer => producer.person === localStorage.getItem('producerName'),
+);
+const currentProducerIndex = producerState.producers.findIndex(
+  producer => producer.person === localStorage.getItem('producerName'),
+);
 
 const dataFilmorgaphy = currentProducer.filmography;
 const dataBiography = currentProducer.biography;
-const lang = 'eng'
+const lang = 'eng';
 const mapCoordinates = currentProducer.markOnMap;
 const photo = producerState.pictures[currentProducerIndex][0];
 const allPhotos = producerState.pictures[currentProducerIndex];
@@ -34,17 +40,17 @@ const Person = ({ person }) => (
     <Video videoLink={video} />
     <Map mapCoordinates={mapCoordinates} />
   </Fragment>
-)
+);
 
 Person.defaultProps = {
   person: 'Albert Einstein',
-  src: 'https://duckduckgo.com/i/45956a7f.jpg',
-  video: "https://www.youtube.com/embed/hFgB5E0uL_Y"
-}
+  video: 'https://www.youtube.com/embed/hFgB5E0uL_Y',
+};
 
 Person.propTypes = {
   person: PropTypes.string,
-  src: PropTypes.string,
-}
+  // eslint-disable-next-line react/no-unused-prop-types
+  video: PropTypes.string,
+};
 
-export default Person
+export default Person;

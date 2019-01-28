@@ -1,35 +1,37 @@
-import React, { Component, Fragment } from 'react'
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 
-import ModalVideo from 'react-modal-video'
-import './modal-video.min.css'
+import ModalVideo from 'react-modal-video';
+import './modal-video.min.css';
 
 export default class Video extends Component {
-  constructor(props) {
-    super(props)
+  constructor({ videoLink }) {
+    super(videoLink);
 
     this.state = {
-      video: this.props.videoLink,
+      video: videoLink,
       isOpen: false,
-    }
+    };
 
-    this.openModal = this.openModal.bind(this)
-    this.onClick = this.onClick.bind(this)
-  }
-
-  openModal() {
-    this.setState({ isOpen: true })
+    this.openModal = this.openModal.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
   onClick(e) {
-    e.preventDefault()
-    this.openModal()
+    e.preventDefault();
+    this.openModal();
+  }
+
+  openModal() {
+    this.setState({ isOpen: true });
   }
 
   render() {
-    const video = this.state.video
-    const videoId = video.slice(video.lastIndexOf('/') + 1, video.length)
+    const { video } = this.state;
+    const videoId = video.slice(video.lastIndexOf('/') + 1, video.length);
 
-    console.log(video, videoId)
+    console.log(video, videoId);
     return video === '' ? (
       <h2
         style={{
@@ -50,7 +52,7 @@ export default class Video extends Component {
           <iframe
             src={video}
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
             title="002"
             style={{
               position: 'relative',
@@ -64,6 +66,8 @@ export default class Video extends Component {
           {/* transparent block for video click */}
           <div
             onClick={this.onClick}
+            role="button"
+            tabIndex={0}
             style={{
               position: 'relative',
               width: '560px',
@@ -77,11 +81,20 @@ export default class Video extends Component {
 
         <ModalVideo
           channel="youtube"
+          // eslint-disable-next-line react/destructuring-assignment
           isOpen={this.state.isOpen}
           videoId={videoId}
           onClose={() => this.setState({ isOpen: false })}
         />
       </Fragment>
-    )
+    );
   }
 }
+
+Video.defaultProps = {
+  videoLink: '',
+};
+
+Video.propTypes = {
+  videoLink: PropTypes.string,
+};

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Nav } from 'react-bootstrap'
+import React from 'react';
+import { Nav } from 'react-bootstrap';
 
 const Navigation = () => (
   <Nav className="mr-auto" style={{ fontSize: '1.5em' }}>
@@ -7,6 +7,6 @@ const Navigation = () => (
     <Nav.Link href="/team"> Our Team</Nav.Link>
     {/* <Nav.Link href="/person">Great Belorussian Producers</Nav.Link> */}
   </Nav>
-)
+);
 
-export default Navigation
+export default Navigation;
