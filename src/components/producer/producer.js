@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+/* eslint-disable */
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Figure } from 'react-bootstrap';
 
@@ -10,47 +11,63 @@ import Map from './map';
 
 import producerState from '../../utils/producerState';
 
-if (!localStorage.producerName) localStorage.setItem('producerName', '');
+class Person extends Component {
+  constructor(props) {
+    super(props);
 
-const currentProducer = producerState.producers.find(
-  producer => producer.person === localStorage.getItem('producerName'),
-);
-const currentProducerIndex = producerState.producers.findIndex(
-  producer => producer.person === localStorage.getItem('producerName'),
-);
+    this.state = {
+      person: this.props.person,
+      video: this.props.video,
+      dataFilmorgaphy: '',
+      dataBiography: '',
+      mapCoordinates: '',
+      photo: '',
+      allPhotos: '',
+    }
+  }
 
-const dataFilmorgaphy = currentProducer.filmography;
-const dataBiography = currentProducer.biography;
-const mapCoordinates = currentProducer.markOnMap;
-const photo = producerState.pictures[currentProducerIndex][0];
-const allPhotos = producerState.pictures[currentProducerIndex];
-const video = currentProducer.videoLinks;
+  componentWillMount() {
+    // const localStorage = window.localStorage;
 
-const Person = ({ person }) => (
-  <Fragment>
-    <h1>{person}</h1>
+    if (!localStorage.producerName) localStorage.setItem('producerName', 'Белоусов Олег Павлович');
+    const producerState = JSON.parse(localStorage.getItem('producers'));
+    
+    const currentProducer = producerState.find(
+      producer => producer.person === localStorage.getItem('producerName'),
+    );
+    const currentProducerIndex = producerState.findIndex(
+      producer => producer.person === localStorage.getItem('producerName'),
+    );
+    
+    const dataFilmorgaphy = currentProducer.filmography;
+    const dataBiography = currentProducer.biography;
+    const mapCoordinates = currentProducer.markOnMap;
+    const photo = 'producerState.pictures[currentProducerIndex][0]';
+    const allPhotos = ['producerState.pictures[currentProducerIndex]'];
+    const video = currentProducer.videoLinks;
 
-    <Figure>
-      <Figure.Image width={400} height={500} alt={person} src={photo} />
-    </Figure>
+    this.setState({ dataFilmorgaphy, dataBiography, mapCoordinates, photo, allPhotos, video });
+  }
 
-    <Biography biography={dataBiography} />
-    <Filmography filmography={dataFilmorgaphy} />
-    <Photos photoLinks={allPhotos} person={person} />
-    <Video videoLink={video} />
-    <Map mapCoordinates={mapCoordinates} />
-  </Fragment>
-);
+  render() {
+    const { person, dataFilmorgaphy, dataBiography, mapCoordinates, photo, allPhotos, video } = this.state;
 
-Person.defaultProps = {
-  person: 'Albert Einstein',
-  video: 'https://www.youtube.com/embed/hFgB5E0uL_Y',
-};
+    return (
+      <Fragment>
+        <h1>{person}</h1>
 
-Person.propTypes = {
-  person: PropTypes.string,
-  // eslint-disable-next-line react/no-unused-prop-types
-  video: PropTypes.string,
-};
+        <Figure>
+          <Figure.Image width={400} height={500} alt={person} src={photo} />
+        </Figure>
+
+        <Biography biography={dataBiography} />
+        <Filmography filmography={dataFilmorgaphy} />
+        <Photos photoLinks={allPhotos} person={person} />
+        <Video videoLink={video} />
+        <Map mapCoordinates={mapCoordinates} />
+      </Fragment>
+    );
+  }
+}
 
 export default Person;
