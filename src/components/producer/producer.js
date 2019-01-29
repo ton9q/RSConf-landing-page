@@ -1,4 +1,6 @@
-import React, { Fragment } from 'react';
+/* eslint-disable prefer-destructuring */
+/* eslint-disable react/destructuring-assignment */
+import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import { Figure } from 'react-bootstrap';
 
@@ -10,40 +12,52 @@ import Map from './map';
 
 import producerState from '../../utils/producerState';
 
-if (!localStorage.producerName) localStorage.setItem('producerName', '');
+class Person extends Component {
+  constructor({ person }) {
+    super(person);
 
-const currentProducer = producerState.producers.find(
-  producer => producer.person === localStorage.getItem('producerName'),
-);
-const currentProducerIndex = producerState.producers.findIndex(
-  producer => producer.person === localStorage.getItem('producerName'),
-);
+    this.state = {};
+    this.state.currentProducer = producerState.producers.find(
+      producer => producer.person === person,
+    );
+    this.state.currentProducerIndex = producerState.producers.findIndex(
+      producer => producer.person === person,
+    );
 
-const dataFilmorgaphy = currentProducer.filmography;
-const dataBiography = currentProducer.biography;
-const mapCoordinates = currentProducer.markOnMap;
-const photo = producerState.pictures[currentProducerIndex][0];
-const allPhotos = producerState.pictures[currentProducerIndex];
-const video = currentProducer.videoLinks;
+    this.state.dataFilmorgaphy = this.state.currentProducer.filmography;
+    this.state.dataBiography = this.state.currentProducer.biography;
+    this.state.mapCoordinates = this.state.currentProducer.markOnMap;
+    this.state.photo = producerState.pictures[this.state.currentProducerIndex][0];
+    this.state.allPhotos = producerState.pictures[this.state.currentProducerIndex];
+    this.state.video = this.state.currentProducer.videoLinks;
+  }
 
-const Person = ({ person }) => (
-  <Fragment>
-    <h1>{person}</h1>
+  // if (!localStorage.producerName) localStorage.setItem('producerName', '');
+  componentWillReceiveProps() {
+    this.props.person = localStorage.getItem('producerName');
+  }
 
-    <Figure>
-      <Figure.Image width={400} height={500} alt={person} src={photo} />
-    </Figure>
+  render() {
+    return (
+      <Fragment>
+        <h1>{this.person}</h1>
 
-    <Biography biography={dataBiography} />
-    <Filmography filmography={dataFilmorgaphy} />
-    <Photos photoLinks={allPhotos} person={person} />
-    <Video videoLink={video} />
-    <Map mapCoordinates={mapCoordinates} />
-  </Fragment>
-);
+        <Figure>
+          <Figure.Image width={400} height={500} alt={this.person} src={this.state.photo} />
+        </Figure>
+
+        <Biography biography={this.state.dataBiography} />
+        <Filmography filmography={this.state.dataFilmorgaphy} />
+        <Photos photoLinks={this.state.allPhotos} person={this.person} />
+        <Video videoLink={this.state.video} />
+        <Map mapCoordinates={this.state.mapCoordinates} />
+      </Fragment>
+    );
+  }
+}
 
 Person.defaultProps = {
-  person: 'Albert Einstein',
+  person: 'Белоусов Олег Павлович',
   video: 'https://www.youtube.com/embed/hFgB5E0uL_Y',
 };
 
