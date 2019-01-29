@@ -1,22 +1,22 @@
 /* eslint-disable */
-import React from 'react'
+import React from 'react';
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import i18n from 'i18next';
 
-import i18n from 'i18next'
-import '../utils/i18n'
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
-import PersonListHandler from '../components/personListHandler'
-import PersonOfTheDay from '../components/personOfTheDay'
-import Toggle from '../components/toggle'
+import '../utils/i18n';
 
+import PersonListHandler from '../components/personListHandler';
+import PersonOfTheDay from '../components/personOfTheDay';
+import Toggle from '../components/toggle';
 
-import producerState from '../utils/producerState'
+import producerState from '../utils/producerState';
 
-import engProducers from '../../data/producers-eng.json'
-import ruProducers from '../../data/producers-rus.json'
-import byProducers from '../../data/producers-by.json'
+import engProducers from '../../data/producers-eng.json';
+import ruProducers from '../../data/producers-rus.json';
+import byProducers from '../../data/producers-by.json';
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -24,13 +24,13 @@ class IndexPage extends React.Component {
 
     this.state = {
       lang: 'ru',
-    }
+    };
 
-    this.changeLang = this.changeLang.bind(this)
+    this.changeLang = this.changeLang.bind(this);
   }
 
   changeLang(newLang) {
-    this.setState({ lang: newLang })
+    this.setState({ lang: newLang });
   }
 
   render() {
@@ -39,37 +39,33 @@ class IndexPage extends React.Component {
         <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
 
         <Toggle
-          onClick={i => {
+          onClick={(i) => {
             if (i === 'en') {
-              producerState.producers = engProducers
-              window.localStorage.setItem(
-                'producerState',
-                JSON.stringify({ producers: engProducers, pictures: producerState.pictures, lang: i })
-              )
+              producerState.producers = engProducers;
             } else if (i === 'ru') {
-              producerState.producers = ruProducers
-              window.localStorage.setItem(
-                'producerState',
-                JSON.stringify({ producers: ruProducers, pictures: producerState.pictures, lang: i  })
-              )
+              producerState.producers = ruProducers;
             } else if (i === 'by') {
-              producerState.producers = byProducers
-              window.localStorage.setItem(
-                'producerState',
-                JSON.stringify({ producers: byProducers, pictures: producerState.pictures, lang: i })
-              )
+              producerState.producers = byProducers;
             }
-            producerState.lang = i
-            this.changeLang(i)
-            i18n.changeLanguage(i)
+            window.localStorage.setItem(
+              'producerState',
+              JSON.stringify({
+                producers: producerState.producers,
+                pictures: producerState.pictures,
+                lang: i,
+              }),
+            );
+            producerState.lang = i;
+            this.changeLang(i);
+            i18n.changeLanguage(i);
           }}
         />
 
         <PersonOfTheDay />
         <PersonListHandler />
       </Layout>
-    )
+    );
   }
 }
 
-export default IndexPage
+export default IndexPage;

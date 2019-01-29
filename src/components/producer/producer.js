@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { Figure } from 'react-bootstrap';
 
 import Biography from './biography';
@@ -16,40 +15,39 @@ class Person extends Component {
     super(props);
 
     this.state = {
-      person: this.props.person,
-      video: this.props.video,
-      dataFilmorgaphy: '',
-      dataBiography: '',
-      mapCoordinates: '',
-      photo: '',
-      allPhotos: '',
-    }
-  }
-
-  componentWillMount() {
-    if (!window.localStorage.producerName) window.localStorage.setItem('producerName', 'Белоусов Олег Павлович');
-
-    const producerState = JSON.parse(window.localStorage.getItem('producerState'));
+      producerState: producerState,
+    };
     
-    const currentProducer = producerState.producers.find(
-      producer => producer.person === window.localStorage.getItem('producerName'),
-    );
-    const currentProducerIndex = producerState.producers.findIndex(
-      producer => producer.person === window.localStorage.getItem('producerName'),
-    );
-    
-    const dataFilmorgaphy = currentProducer.filmography;
-    const dataBiography = currentProducer.biography;
-    const mapCoordinates = currentProducer.markOnMap;
-    const photo = producerState.pictures[currentProducerIndex][0];
-    const allPhotos = producerState.pictures[currentProducerIndex];
-    const video = currentProducer.videoLinks;
+    if ( typeof window !== `undefined`) {
+      this.state.producerState = JSON.parse(localStorage.getItem('producerState'));
+      this.state.person = localStorage.getItem('producerName');
+    } 
 
-    this.setState({ dataFilmorgaphy, dataBiography, mapCoordinates, photo, allPhotos, video });
+    this.state.currentProducer = this.state.producerState.producers.find(
+      producer => producer.person === this.state.person,
+    );
+    this.state.currentProducerIndex = this.state.producerState.producers.findIndex(
+      producer => producer.person === this.state.person,
+    );
+
+    this.state.dataFilmorgaphy = this.state.currentProducer.filmography;
+    this.state.dataBiography = this.state.currentProducer.biography;
+    this.state.mapCoordinates = this.state.currentProducer.markOnMap;
+    this.state.photo = producerState.pictures[this.state.currentProducerIndex][0];
+    this.state.allPhotos = producerState.pictures[this.state.currentProducerIndex];
+    this.state.video = this.state.currentProducer.videoLinks;
   }
 
   render() {
-    const { person, dataFilmorgaphy, dataBiography, mapCoordinates, photo, allPhotos, video } = this.state;
+    const {
+      person,
+      dataFilmorgaphy,
+      dataBiography,
+      mapCoordinates,
+      photo,
+      allPhotos,
+      video,
+    } = this.state;
 
     return (
       <Fragment>
@@ -68,5 +66,10 @@ class Person extends Component {
     );
   }
 }
+
+Person.defaultProps = {
+  person: 'Белоусов Олег Павлович',
+  video: 'https://www.youtube.com/embed/hFgB5E0uL_Y',
+};
 
 export default Person;
