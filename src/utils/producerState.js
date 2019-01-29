@@ -49,6 +49,17 @@ const dateNow = new Date();
 let producerOfTheDay = dateNow.getDay() - 2;
 if (producerOfTheDay < 0) producerOfTheDay = 0;
 
+if (typeof window !== 'undefined') {
+  window.localStorage.setItem(
+    'producerState',
+    JSON.stringify({
+      producers,
+      pictures,
+      lang: 'ru',
+    }),
+  );
+}
+
 export default {
   producers,
   producerOfTheDay,
