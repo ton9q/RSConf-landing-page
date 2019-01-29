@@ -9,8 +9,10 @@ import Producer from '../components/producer/producer';
 const Person = () => (
   <Layout>
     <SEO title="Person" />
-    <Producer person={localStorage.getItem('producerName')} />
-    <Link to="/"><Trans>Back</Trans></Link>
+    <Producer person={window.localStorage.getItem('producerName')} />
+    <Link to="/">
+      <Trans>Back</Trans>
+    </Link>
   </Layout>
 );
 

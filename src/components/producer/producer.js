@@ -27,23 +27,22 @@ class Person extends Component {
   }
 
   componentWillMount() {
-    // const localStorage = window.localStorage;
+    if (!window.localStorage.producerName) window.localStorage.setItem('producerName', 'Белоусов Олег Павлович');
 
-    if (!localStorage.producerName) localStorage.setItem('producerName', 'Белоусов Олег Павлович');
-    const producerState = JSON.parse(localStorage.getItem('producers'));
+    const producerState = JSON.parse(window.localStorage.getItem('producerState'));
     
-    const currentProducer = producerState.find(
-      producer => producer.person === localStorage.getItem('producerName'),
+    const currentProducer = producerState.producers.find(
+      producer => producer.person === window.localStorage.getItem('producerName'),
     );
-    const currentProducerIndex = producerState.findIndex(
-      producer => producer.person === localStorage.getItem('producerName'),
+    const currentProducerIndex = producerState.producers.findIndex(
+      producer => producer.person === window.localStorage.getItem('producerName'),
     );
     
     const dataFilmorgaphy = currentProducer.filmography;
     const dataBiography = currentProducer.biography;
     const mapCoordinates = currentProducer.markOnMap;
-    const photo = 'producerState.pictures[currentProducerIndex][0]';
-    const allPhotos = ['producerState.pictures[currentProducerIndex]'];
+    const photo = producerState.pictures[currentProducerIndex][0];
+    const allPhotos = producerState.pictures[currentProducerIndex];
     const video = currentProducer.videoLinks;
 
     this.setState({ dataFilmorgaphy, dataBiography, mapCoordinates, photo, allPhotos, video });

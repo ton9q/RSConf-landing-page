@@ -1,21 +1,13 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-disable react/destructuring-assignment */
-/* eslint-disable */
-
 import React, { Component, Fragment } from 'react';
 import { CardGroup } from 'react-bootstrap';
 import { Trans } from 'react-i18next';
-
-import i18n from 'i18next';
 
 import producerState from '../utils/producerState';
 
 import Person from './person';
 import Search from './search';
-import Toggle from './menu/toggle';
-
-import engProducers from '../../data/producers-eng.json';
-import ruProducers from '../../data/producers-rus.json';
 
 export default class PersonListHandler extends Component {
   constructor(props) {
@@ -25,8 +17,6 @@ export default class PersonListHandler extends Component {
 
     this.state = {
       resultSearch: '',
-      producers: producerState.producers,
-      lang: producerState.lang,
     };
   }
 
@@ -54,7 +44,7 @@ export default class PersonListHandler extends Component {
 
   handleClick = (e) => {
     if (e.target.tagName === 'BUTTON') {
-      localStorage.setItem('producerName', `${e.currentTarget.className}`);
+      window.localStorage.setItem('producerName', `${e.currentTarget.className}`);
     }
   }
 
@@ -65,39 +55,15 @@ export default class PersonListHandler extends Component {
   }
 
   render() {
-    let producers;
-    i18n.changeLanguage(this.state.lang);
-    if (this.state.lang === 'en') {
-      producers = this.state.producers;
-    } else {
-      producers = this.state.producers;
-    }
-
     const { resultSearch } = this.state;
 
-    const producersFiltred = PersonListHandler.getFiltered(producers, resultSearch);
+    const producersFiltred = PersonListHandler.getFiltered(producerState.producers, resultSearch);
     const persons = [];
 
-    producers.map(producer => persons.push(producer.person));
+    producerState.producers.map(producer => persons.push(producer.person));
 
     return (
       <Fragment>
-        <Toggle
-          onClick={(i) => {
-            if (i === 'en') {
-              this.state.producers = engProducers;
-              localStorage.setItem('producers', JSON.stringify(engProducers));
-              this.state.lang = i;
-              this.forceUpdate();
-            } else if (i === 'ru') {
-              this.state.producers = ruProducers;
-              localStorage.setItem('producers', ruProducers);
-              // producerState.producers = ruProducers;
-              this.state.lang = i;
-              this.forceUpdate();
-            }
-          }}
-        />
         <CardGroup>
           <Search onChange={this.inputTextHandler} />
           {producersFiltred.map(person => (
