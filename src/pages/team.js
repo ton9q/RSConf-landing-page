@@ -19,7 +19,7 @@ const Team = () => (
           nickname={teammate.nickaname}
           person={teammate.person}
           linkImage={teammate.linkImage}
-          linkButton={teammate.linkButton}
+          linkGit={teammate.linkButton}
         />
       ))}
     </CardGroup>
