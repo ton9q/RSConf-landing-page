@@ -1,16 +1,20 @@
-import React from 'react'
-import { Link } from 'gatsby'
+/* eslint-disable react/destructuring-assignment */
+import React from 'react';
+import { Link } from 'gatsby';
+import { Trans } from 'react-i18next';
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Producer from '../components/producer/producer'
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Producer from '../components/producer/producer';
 
 const Person = () => (
   <Layout>
     <SEO title="Person" />
-    <Producer  person={localStorage.getItem('producerName')} />
-    <Link to="/">Назад</Link>
+    <Producer />
+    <Link to="/">
+      <Trans>Back</Trans>
+    </Link>
   </Layout>
-)
+);
 
-export default Person
+export default Person;

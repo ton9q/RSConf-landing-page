@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import logo from '../../images/RSS.png'
+import logo from '../../images/RSS.png';
 
 const Logo = () => (
   <img
@@ -8,6 +8,6 @@ const Logo = () => (
     alt="RSSchool logo"
     style={{ maxInlineSize: '4em', marginRight: '3em' }}
   />
-)
+);
 
-export default Logo
+export default Logo;

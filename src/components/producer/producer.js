@@ -1,49 +1,78 @@
-import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
+/* eslint-disable */
+import React, { Component, Fragment } from 'react'
 import { Figure } from 'react-bootstrap'
 
 import Biography from './biography'
 import Filmography from './filmography'
 import Photos from './photos'
-import Video from './video'
+import Video from './video/video'
 import Map from './map'
-import producerState from "../producerState";
 
-const currentProducer = producerState.producers.find((producer) => producer.person === localStorage.getItem('producerName'));
-const currentProducerIndex = producerState.producers.findIndex((producer) => producer.person === localStorage.getItem('producerName'));
+import producerState from '../../utils/producerState'
 
-const dataFilmorgaphy = currentProducer.filmography;
-const dataBiography = currentProducer.biography;
-const lang = 'eng'
-const mapCoordinates = currentProducer.markOnMap;
-const photo = producerState.pictures[currentProducerIndex][0];
-const allPhotos = producerState.pictures[currentProducerIndex];
-const video = currentProducer.videoLinks;
+class Person extends Component {
+  constructor(props) {
+    super(props)
 
-const Person = ({ person }) => (
-  <Fragment>
-    <h1>{person}</h1>
+    this.state = {
+      producerState: producerState,
+    }
 
-    <Figure>
-      <Figure.Image width={400} height={500} alt={person} src={photo} />
-    </Figure>
+    if (typeof window !== `undefined`) {
+      this.state.producerState = JSON.parse(localStorage.getItem('producerState'))
+      this.state.person = localStorage.getItem('producerName')
 
-    <Biography biography={dataBiography} lang={lang} />
-    <Filmography filmography={dataFilmorgaphy} lang={lang} />
-    <Photos photoLinks={allPhotos} person={person} />
-    <Video videoLink={video} />
-    <Map mapCoordinates={mapCoordinates} />
-  </Fragment>
-)
+      this.state.currentProducer = this.state.producerState.producers.find(
+        producer => producer.person === this.state.person
+      )
+      this.state.currentProducerIndex = this.state.producerState.producers.findIndex(
+        producer => producer.person === this.state.person
+      )
 
-Person.defaultProps = {
-  person: 'Albert Einstein',
-  src: 'https://duckduckgo.com/i/45956a7f.jpg',
+      this.state.dataFilmorgaphy = this.state.currentProducer.filmography
+      this.state.dataBiography = this.state.currentProducer.biography
+      this.state.mapCoordinates = this.state.currentProducer.markOnMap
+      this.state.photo = producerState.pictures[this.state.currentProducerIndex][0]
+      this.state.allPhotos = producerState.pictures[this.state.currentProducerIndex]
+      this.state.video = this.state.currentProducer.videoLinks
+    }
+  }
+
+  render() {
+    const {
+      person,
+      dataFilmorgaphy,
+      dataBiography,
+      mapCoordinates,
+      photo,
+      allPhotos,
+      video,
+    } = this.state
+
+    return (
+      <Fragment>
+        {typeof window !== `undefined` && (
+          <div>
+            <h1>{person}</h1>
+            <Figure>
+              <Figure.Image width={400} height={500} alt={person} src={photo} />
+            </Figure>
+
+            <Biography biography={dataBiography} />
+            <Filmography filmography={dataFilmorgaphy} />
+            <Photos photoLinks={allPhotos} person={person} />
+            <Video videoLink={video} />
+            <Map mapCoordinates={mapCoordinates} />
+          </div>
+        )}
+      </Fragment>
+    )
+  }
 }
 
-Person.propTypes = {
-  person: PropTypes.string,
-  src: PropTypes.string,
+Person.defaultProps = {
+  person: 'Белоусов Олег Павлович',
+  video: 'https://www.youtube.com/embed/hFgB5E0uL_Y',
 }
 
 export default Person

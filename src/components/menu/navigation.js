@@ -1,12 +1,18 @@
-import React from 'react'
-import { Nav } from 'react-bootstrap'
+import React from 'react';
+import { Nav } from 'react-bootstrap';
+import { Trans } from 'react-i18next';
+import { Link } from 'gatsby';
 
 const Navigation = () => (
   <Nav className="mr-auto" style={{ fontSize: '1.5em' }}>
-    <Nav.Link href="/">Home</Nav.Link>
-    <Nav.Link href="/team"> Our Team</Nav.Link>
-    {/* <Nav.Link href="/person">Great Belorussian Producers</Nav.Link> */}
-  </Nav>
-)
+    <Link to="/" style={{ margin: '0 10px', textDecoration: 'none' }}>
+      <Trans>Home</Trans>
+    </Link>
 
-export default Navigation
+    <Link to="/team" style={{ margin: '0 10px', textDecoration: 'none' }}>
+      <Trans>OurTeam</Trans>
+    </Link>
+  </Nav>
+);
+
+export default Navigation;

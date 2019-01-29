@@ -1,32 +1,31 @@
-import React, { Component, Fragment } from 'react'
-import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react'
+import React, { Component, Fragment } from 'react';
+import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
+import PropTypes from 'prop-types';
+import { Trans } from 'react-i18next';
 
 export default class Biography extends Component {
-  constructor(props) {
-    super(props)
+  constructor({ biography }) {
+    super(biography);
 
     this.state = {
-      data: this.props.biography,
-      lang: this.props.lang
-    }
+      data: biography,
+    };
   }
 
   render() {
-    const { data, lang } = this.state
+    const { data } = this.state;
 
     return (
       <Fragment>
-        {lang === 'rus' ? (<h2>Биография</h2>) : (<h2>Biography</h2>)}
+        <h2>
+          <Trans>Biography</Trans>
+        </h2>
 
-        <Timeline lineColor={'#ddd'}>
+        <Timeline lineColor="#ddd">
           {data.map((part, index) => (
             <div>
               {index % 2 === 0 ? (
-                <TimelineItem
-                  key={index}
-                  dateText={part[0]}
-                  style={{ color: '#e86971' }}
-                >
+                <TimelineItem key={part} dateText={part[0]} style={{ color: '#e86971' }}>
                   <p>{part[1]}</p>
                 </TimelineItem>
               ) : (
@@ -48,6 +47,14 @@ export default class Biography extends Component {
           ))}
         </Timeline>
       </Fragment>
-    )
+    );
   }
 }
+
+Biography.defaultProps = {
+  biography: '',
+};
+
+Biography.propTypes = {
+  biography: PropTypes.string,
+};

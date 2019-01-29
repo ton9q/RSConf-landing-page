@@ -1,14 +1,15 @@
 module.exports = {
-    "extends": "airbnb",
-    "env": {
-        "browser": true,
-        "node": true,
-        "jest": true,
-        "jsx": true
-    },
-    "plugins": [
-        "react",
-        "jsx-ally",
-        "import"
-    ]
-};
+  extends: 'airbnb',
+  env: {
+    browser: true,
+    node: true,
+    jest: true,
+  },
+  plugins: ['react', 'jsx-a11y', 'import'],
+  parser: 'babel-eslint',
+  rules: {
+    'strict': 0,
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'linebreak-style': 0,
+  },
+}

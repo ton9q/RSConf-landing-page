@@ -1,0 +1,68 @@
+﻿{
+  "en": {
+    "translation": {
+      "Home": "Home",
+      "OurTeam": "Our Team",
+      "BuiltWith": "Built with",
+      "Gatsby": "Gatsby",
+      "ProducerOfTheDay": "Producer Of The Day",
+      "NotFound": "NOT FOUND",
+      "messageError": "You just hit a route that doesn't exist... the sadness.",
+      "Back": "Back",
+      "OurTeamHeader": "Our Team «Group 23»",
+      "More": "More",
+      "gitHub": "gitHub",
+      "Search": "Search",
+      "Rus": "Rus",
+      "Eng": "Eng",
+      "Blr": "Blr",	
+      "Biography": "Biography",
+      "Filmography": "Filmography",
+      "HaventVideoMessage": "Sorry, but we dont have a video"
+    }
+  },
+  "ru": {
+    "translation": {
+      "Home": "Главная",
+      "OurTeam": "Наша команда",
+      "BuiltWith": "Сделано с помощью",
+      "Gatsby": "Gatsby",
+      "ProducerOfTheDay": "Продюсер дня",
+      "NotFound": "НЕ НАЙДЕНО",
+      "messageError": "Вы попали на маршрут, которого не существует... печально.",
+      "Back": "Назад",
+      "OurTeamHeader": "Наша команда «Группа 23»",
+      "More": "Больше",
+      "gitHub": "gitHub",
+      "Search": "Поиск",
+      "Rus": "Рус",
+      "Eng": "Англ",
+      "Blr": "Бел",	
+      "Biography": "Биография",
+      "Filmography": "Фильмография",
+      "HaventVideoMessage": "Извините, видео для этого автора не имеется"
+    }
+  },
+  "by": {
+    "translation": {
+      "Home": "Галоўная",
+      "OurTeam": "Наша каманда",
+      "BuiltWith": "Зроблена з дапамогай",
+      "Gatsby": "Gatsby",
+      "ProducerOfTheDay": "Прадзюсар дня",
+      "NotFound": "НЕ ЗНОЙДЗЕНА",
+      "messageError": "Вы трапілі на маршрут, якога не існуе ... сумна.",
+      "Back": "Назад",
+      "OurTeamHeader": "Наша команда «Група 23»",
+      "More": "Больш",
+      "gitHub": "gitHub",
+      "Search": "Пошук",
+      "Rus": "Рус",
+      "Eng": "Англ",
+      "Blr": "Бел",	
+      "Biography": "Біяграфія",
+      "Filmography": "Фільмаграфія",
+      "HaventVideoMessage": "Выбачайце, відэа для гэтага аўтара не маецца"
+    }
+  }
+}
